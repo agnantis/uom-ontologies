@@ -1,1 +1,221 @@
-/home/konstantine/git/phd/ontologies/CalendarPrefs/examples/CalendarPrefsExamples.ttl
+@prefix : <http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix calPrefs: <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#> .
+@base <http://www.uom.gr/ai/ontologies/CalendarPrefsExample.owl> .
+
+<http://www.uom.gr/ai/ontologies/CalendarPrefsExample.owl> rdf:type owl:Ontology ;
+                                                           
+                                                           owl:imports <http://www.uom.gr/ai/ontologies/Activities.owl> ,
+                                                                       <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl> ,
+                                                                       <http://www.w3.org/2006/time> .
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#CalendarPrefsExample
+
+:CalendarPrefsExample rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#5MinDuration
+
+<http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#5MinDuration> rdf:type :CalendarPrefsExample ,
+                                                                          owl:NamedIndividual ,
+                                                                          <http://www.w3.org/2006/time#DurationDescription> ;
+                                                                 
+                                                                 <http://www.w3.org/2006/time#minutes> "5"^^xsd:nonNegativeInteger .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#currentJob
+
+:currentJob rdf:type :CalendarPrefsExample ,
+                     owl:NamedIndividual ,
+                     owl:Thing ;
+            
+            rdfs:label "Software engineer" .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#durationA
+
+:durationA rdf:type :CalendarPrefsExample ,
+                    owl:NamedIndividual ,
+                    <http://www.w3.org/2006/time#DurationDescription> ;
+           
+           <http://www.w3.org/2006/time#hours> "2"^^xsd:nonNegativeInteger .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#durationB
+
+:durationB rdf:type :CalendarPrefsExample ,
+                    owl:NamedIndividual ,
+                    <http://www.w3.org/2006/time#DurationDescription> ;
+           
+           <http://www.w3.org/2006/time#hours> "3"^^xsd:nonNegativeInteger .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#homeAddress
+
+:homeAddress rdf:type :CalendarPrefsExample ,
+                      owl:NamedIndividual ,
+                      owl:Thing ;
+             
+             rdfs:label "Athens, Greece" .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#impliesPrefA
+
+:impliesPrefA rdf:type calPrefs:TimeDistancePreference ,
+                       :CalendarPrefsExample ,
+                       owl:NamedIndividual ;
+              
+              calPrefs:hasFirstMember <http://www.uom.gr/ai/ontologies/Activities.owl#FootballActivity> ;
+              
+              calPrefs:hasOrder calPrefs:follows ;
+              
+              calPrefs:hasMaxDuration <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#5MinDuration> ;
+              
+              calPrefs:hasSecondMember :shortJoggingSession .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#impliesPrefB
+
+:impliesPrefB rdf:type calPrefs:TimeDistancePreference ,
+                       :CalendarPrefsExample ,
+                       owl:NamedIndividual ;
+              
+              calPrefs:hasFirstMember <http://www.uom.gr/ai/ontologies/Activities.owl#FootballActivity> ;
+              
+              calPrefs:hasOrder calPrefs:proceeds ;
+              
+              calPrefs:hasMaxDuration <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#5MinDuration> ;
+              
+              calPrefs:hasSecondMember :shortStretchingSession .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#joggingDuration
+
+:joggingDuration rdf:type :CalendarPrefsExample ,
+                          owl:NamedIndividual ,
+                          <http://www.w3.org/2006/time#DurationDescription> ;
+                 
+                 <http://www.w3.org/2006/time#minutes> "30"^^xsd:nonNegativeInteger .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#shortJoggingSession
+
+:shortJoggingSession rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#JoggingActivity> ,
+                              :CalendarPrefsExample ,
+                              owl:NamedIndividual ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasDuration> :joggingDuration .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#shortStretchingSession
+
+:shortStretchingSession rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#GymnasticsActivity> ,
+                                 :CalendarPrefsExample ,
+                                 owl:NamedIndividual ;
+                        
+                        <http://www.uom.gr/ai/ontologies/Activities.owl#hasDuration> :stretchingDuration .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#stretchingDuration
+
+:stretchingDuration rdf:type :CalendarPrefsExample ,
+                             owl:NamedIndividual ,
+                             <http://www.w3.org/2006/time#DurationDescription> ;
+                    
+                    <http://www.w3.org/2006/time#minutes> "15"^^xsd:nonNegativeInteger .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#timeDistPreference
+
+:timeDistPreference rdf:type calPrefs:TimeDistancePreference ,
+                             :CalendarPrefsExample ,
+                             owl:NamedIndividual ;
+                    
+                    calPrefs:hasFirstMember <http://www.uom.gr/ai/ontologies/Activities.owl#SocialActivity> ;
+                    
+                    calPrefs:hasSecondMember <http://www.uom.gr/ai/ontologies/Activities.owl#SportsActivity> ;
+                    
+                    calPrefs:hasMinDuration :durationA ;
+                    
+                    calPrefs:hasPrefDuration :durationB .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#user1
+
+:user1 rdf:type calPrefs:UserProfile ,
+                :CalendarPrefsExample ,
+                owl:NamedIndividual ;
+       
+       calPrefs:hasAge "30"^^xsd:nonNegativeInteger ;
+       
+       calPrefs:hasEmail "nikos.nikolaou@example.com"^^xsd:string ;
+       
+       calPrefs:hasFirstName "Νίκος" ;
+       
+       calPrefs:hasNickname "Nikolas" ;
+       
+       calPrefs:hasLastName "Nikolaou" ;
+       
+       calPrefs:hasEducationBackground calPrefs:MSc_holder ;
+       
+       calPrefs:hasGender calPrefs:Male ;
+       
+       calPrefs:hasCurrentWork :currentJob ;
+       
+       calPrefs:homeLocation :homeAddress ;
+       
+       calPrefs:hasActivityPreference :impliesPrefA ,
+                                      :impliesPrefB ,
+                                      :timeDistPreference ;
+       
+       calPrefs:workLocation :workAddress .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefsExamples.owl#workAddress
+
+:workAddress rdf:type :CalendarPrefsExample ,
+                      owl:NamedIndividual ,
+                      owl:Thing ;
+             
+             rdfs:label "Thessaloniki, Greece" .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+

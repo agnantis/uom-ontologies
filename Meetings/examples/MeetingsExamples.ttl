@@ -1,1 +1,514 @@
-/home/konstantine/git/phd/ontologies/Meetings/examples/MeetingsExamples.ttl
+@prefix : <http://www.uom.gr/ai/ontologies/MeetingsExamples.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix meetings: <http://www.uom.gr/ai/ontologies/Meetings.owl#> .
+@base <http://www.uom.gr/ai/ontologies/MeetingsExamples.owl> .
+
+<http://www.uom.gr/ai/ontologies/MeetingsExamples.owl> rdf:type owl:Ontology ;
+                                               
+                                                       owl:imports <http://www.w3.org/2006/time> ;
+                                               
+                                                       owl:imports <http://www.uom.gr/ai/ontologies/Meetings.owl> .
+
+
+
+###  http://www.uom.gr/ai/ontologies/MeetingsExamples.owl#Example
+
+:Example rdf:type owl:Class .
+
+
+#########################################
+#
+# Scenario 1
+#
+#########################################
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#tpOrganizer1
+
+:tpOrganizer1 rdf:type :Example ,
+                       meetings:TimeProgramOrganizer ,
+                       owl:NamedIndividual ;
+              
+              meetings:hasPreferredinterval :combo_interval1 ;
+              
+              meetings:hasExcludedInterval :date_interval ,
+                                   :day_interval1 .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#combo_interval1
+
+:combo_interval1 rdf:type :Example ,
+                          owl:NamedIndividual ;
+                 
+                 meetings:consistsOf :day_interval1 ,
+                             :time_interval .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#day_interval2
+
+:day_interval2 rdf:type meetings:DayInterval ,
+                        :Example ,
+                        owl:NamedIndividual ;
+               
+               meetings:startsAt <http://www.w3.org/2006/time#Monday> ;
+               
+               meetings:endsAt <http://www.w3.org/2006/time#Tuesday> .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#day_description3
+
+:day_description3 rdf:type meetings:DayDescription ,
+                           :Example ,
+                           owl:NamedIndividual ;
+                  
+                  <http://www.w3.org/2006/time#dayOfWeek> <http://www.w3.org/2006/time#Monday> .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#day_description4
+
+:day_description4 rdf:type meetings:DayDescription ,
+                           :Example ,
+                           owl:NamedIndividual ;
+                  
+                  <http://www.w3.org/2006/time#dayOfWeek> <http://www.w3.org/2006/time#Tuesday> .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#time_interval
+
+:time_interval rdf:type :Example ,
+                        owl:NamedIndividual ;
+               
+               rdfs:label "20:00 - 22:00" ;
+               
+               rdfs:comment "Ένα παράδειγμα διαστήματος ωρών. Περιγράφει: 20:00 - 22:30"@el ,
+                            "A time interval example. Describes: 20:00 - 22:30"@en ;
+               
+               meetings:startsAt :time_description1 ;
+               
+               meetings:endsAt :time_description2 .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#time_description1
+
+:time_description1 rdf:type :Example ,
+                            meetings:TimeDescription ,
+                            owl:NamedIndividual ;
+                   
+                   <http://www.w3.org/2006/time#hour> "9"^^xsd:nonNegativeInteger .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#time_description2
+
+:time_description2 rdf:type :Example ,
+                            meetings:TimeDescription ,
+                            owl:NamedIndividual ;
+                   
+                   <http://www.w3.org/2006/time#hour> "15"^^xsd:nonNegativeInteger ;
+                   
+                   <http://www.w3.org/2006/time#minute> "30"^^xsd:nonNegativeInteger .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#day_interval1
+
+:day_interval1 rdf:type :Example ,
+                        owl:NamedIndividual ;
+               
+               rdfs:label "Σαββατοκύριακο"@el ,
+                          "A day interval example. Describes: a weekend"@en ,
+                          "Weekend"@en ;
+               
+               rdfs:comment "Ένα παράδειγμα διαστήματος ημερών. Περιγράφει: ένα Σαββατοκύριακο"@el ;
+               
+               meetings:startsAt :day_description1 ;
+               
+               meetings:endsAt :day_description2 .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#day_description1
+
+:day_description1 rdf:type meetings:DayDescription ,
+                           :Example ,
+                           owl:NamedIndividual ;
+                  
+                  <http://www.w3.org/2006/time#dayOfWeek> <http://www.w3.org/2006/time#Saturday> .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#day_description2
+
+:day_description2 rdf:type meetings:DayDescription ,
+                           :Example ,
+                           owl:NamedIndividual ;
+                  
+                  <http://www.w3.org/2006/time#dayOfWeek> <http://www.w3.org/2006/time#Sunday> .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#date_interval
+
+:date_interval rdf:type :Example ,
+                        owl:NamedIndividual ;
+               
+               rdfs:label "Διακοπές Χριστουγέννων"@el ,
+                          "Chrismas holidays"@en ;
+               
+               rdfs:comment "Ένα παράδειγμα διαστήματος ημερομηνιών. Περιγράφει: Διακοπές Χριστουγέννων"@el ,
+                            "A date interval example. Describes: Christmas holidays"@en ;
+               
+               meetings:endsAt :date_description1 ;
+               
+               meetings:startsAt :date_description2 .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#date_description1
+
+:date_description1 rdf:type meetings:DateDescription ,
+                            :Example ,
+                            owl:NamedIndividual ;
+                   
+                   <http://www.w3.org/2006/time#day> "---23"^^xsd:gDay ;
+                   
+                   <http://www.w3.org/2006/time#month> "--12"^^xsd:gMonth ;
+                   
+                   <http://www.w3.org/2006/time#year> "2012"^^xsd:gYear .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#date_description2
+
+:date_description2 rdf:type meetings:DateDescription ,
+                            :Example ,
+                            owl:NamedIndividual ;
+                   
+                   <http://www.w3.org/2006/time#day> "---03"^^xsd:gDay ;
+                   
+                   <http://www.w3.org/2006/time#month> "--01"^^xsd:gMonth ;
+                   
+                   <http://www.w3.org/2006/time#year> "2013"^^xsd:gYear .
+
+#########################################
+#
+# Scenario 2
+#
+#########################################
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#userCalendar
+
+:userCalendar rdf:type meetings:Calendar ,
+                       :Example ,
+                       owl:NamedIndividual ;
+              
+              meetings:hasEntry :calEntry1 ,
+                        :calEntry2 ,
+                        :calEntry3 ,
+                        :calEntry4 ,
+                        :calEntry5 .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#calEntry1
+
+:calEntry1 rdf:type meetings:CalendarEntry ,
+                    :Example ,
+                    owl:NamedIndividual ;
+           
+           meetings:hasType meetings:Available ;
+           
+           meetings:hasStartTime :inst0 ;
+           
+           meetings:hasEndTime :inst1 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#calEntry2
+
+:calEntry2 rdf:type meetings:CalendarEntry ,
+                    :Example ,
+                    owl:NamedIndividual ;
+           
+           meetings:hasType meetings:Busy ;
+           
+           meetings:hasMovabilityType meetings:TotallyImmovable ;
+           
+           meetings:hasStartTime :inst1 ;
+           
+           meetings:hasEndTime :inst2 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#calEntry3
+
+:calEntry3 rdf:type meetings:CalendarEntry ,
+                    :Example ,
+                    owl:NamedIndividual ;
+           
+           meetings:hasType meetings:Available ;
+           
+           meetings:hasStartTime :inst2 ;
+           
+           meetings:hasEndTime :inst3 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#calEntry4
+
+:calEntry4 rdf:type meetings:CalendarEntry ,
+                    :Example ,
+                    owl:NamedIndividual ;
+           
+           meetings:hasImportanceType meetings:FairlyImportant ;
+           
+           meetings:hasMovabilityType meetings:FairlyMovable ;
+           
+           meetings:hasType meetings:ProbablyBusy ;
+           
+           meetings:hasStartTime :inst3 ;
+           
+           meetings:hasEndTime :inst4 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#calEntry5
+
+:calEntry5 rdf:type meetings:CalendarEntry ,
+                    :Example ,
+                    owl:NamedIndividual ;
+           
+           meetings:hasType meetings:Available ;
+           
+           meetings:hasStartTime :inst4 ;
+           
+           meetings:hasEndTime :inst5 .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#inst0
+
+:inst0 rdf:type :Example ,
+                owl:NamedIndividual ,
+                <http://www.w3.org/2006/time#Instant> ;
+       
+       <http://www.w3.org/2006/time#inXSDDateTime> "2012-11-20T00:00:00"^^xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#inst1
+
+:inst1 rdf:type :Example ,
+                owl:NamedIndividual ,
+                <http://www.w3.org/2006/time#Instant> ;
+       
+       <http://www.w3.org/2006/time#inXSDDateTime> "2012-11-20T12:00:00"^^xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#inst2
+
+:inst2 rdf:type :Example ,
+                owl:NamedIndividual ,
+                <http://www.w3.org/2006/time#Instant> ;
+       
+       <http://www.w3.org/2006/time#inXSDDateTime> "2012-11-20T15:00:00"^^xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#inst3
+
+:inst3 rdf:type :Example ,
+                owl:NamedIndividual ,
+                <http://www.w3.org/2006/time#Instant> ;
+       
+       <http://www.w3.org/2006/time#inXSDDateTime> "2012-11-20T17:00:00"^^xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#inst4
+
+:inst4 rdf:type :Example ,
+                owl:NamedIndividual ,
+                <http://www.w3.org/2006/time#Instant> ;
+       
+       <http://www.w3.org/2006/time#inXSDDateTime> "2012-11-20T19:30:00"^^xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#inst5
+
+:inst5 rdf:type :Example ,
+                owl:NamedIndividual ,
+                <http://www.w3.org/2006/time#Instant> ;
+       
+       <http://www.w3.org/2006/time#inXSDDateTime> "2012-11-20T23:59:59"^^xsd:dateTime .
+
+
+#########################################
+#
+# Scenario 3
+#
+#########################################
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#arrangedMeeting
+
+:arrangedMeeting rdf:type meetings:ArrangedMeeting ,
+                          :Example ,
+                          owl:NamedIndividual ;
+                 
+                 meetings:name "School reunion" ;
+                 
+                 meetings:hasParticipant :Eleni ,
+                                 :Kostas ,
+                                 :Vasilis ;
+                 
+                 meetings:hasLocation :Xanthi ;
+                 
+                 meetings:hasEndTime :endTime ;
+                 
+                 meetings:hasStartTime :startTime .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#Xanthi
+
+:Xanthi rdf:type :Example ,
+                 meetings:Location ,
+                 owl:NamedIndividual ;
+        
+        meetings:name "Ξάνθη" .
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#Eleni
+
+:Eleni rdf:type :Example ,
+                meetings:Participant ,
+                owl:NamedIndividual .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#Kostas
+
+:Kostas rdf:type :Example ,
+                 meetings:Participant ,
+                 owl:NamedIndividual .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#Vasilis
+
+:Vasilis rdf:type :Example ,
+                  meetings:Participant ,
+                  owl:NamedIndividual .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#startTime
+
+:startTime rdf:type :Example ,
+                    owl:NamedIndividual ,
+                    <http://www.w3.org/2006/time#Instant> ;
+           
+           <http://www.w3.org/2006/time#inXSDDateTime> "2012-11-01T12:00:00"^^xsd:dateTime .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#endTime
+
+:endTime rdf:type :Example ,
+                  owl:NamedIndividual ,
+                  <http://www.w3.org/2006/time#Instant> ;
+         
+         <http://www.w3.org/2006/time#inXSDDateTime> "2012-11-01T14:30:00"^^xsd:dateTime .
+
+#########################################
+#
+# Scenario 4
+#
+#########################################
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#toBeArrangeMeeting
+
+:toBeArrangeMeeting rdf:type :Example ,
+                             meetings:ToBeArrangedMeeting ,
+                             owl:NamedIndividual ;
+                    
+                    meetings:name "Progress report"^^xsd:string ;
+                    
+                    meetings:topic "development issues"^^xsd:string ,
+                           "economic issues"^^xsd:string ;
+                    
+                    meetings:hasParticipant :John ,
+                                    :Marina ,
+                                    :Nick ;
+                    
+                    meetings:hasLocation meetings:NoLocation ;
+                    
+                    meetings:hasEndTimeWindow :endWin ;
+                    
+                    meetings:hasMaxDuration :maxDur ;
+                    
+                    meetings:hasMinDuration :minDur ;
+                    
+                    meetings:hasPreferredDuration :prefDur ;
+                    
+                    meetings:hasStartTimeWindow :startWin .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#John
+
+:John rdf:type :Example ,
+               meetings:Participant ,
+               owl:NamedIndividual ;
+      
+      meetings:hasRole meetings:Organizer ;
+      
+      meetings:hasPresenceType meetings:RequiredPresence .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#Marina
+
+:Marina rdf:type :Example ,
+                 meetings:Participant ,
+                 owl:NamedIndividual ;
+        
+        meetings:hasRole meetings:Member ;
+        
+        meetings:hasPresenceType meetings:RequiredPresence .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#Nick
+
+:Nick rdf:type :Example ,
+               meetings:Participant ,
+               owl:NamedIndividual ;
+      
+      meetings:hasPresenceType meetings:DesiredPresence ;
+      
+      meetings:hasRole meetings:Guest .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#startWin
+
+:startWin rdf:type :Example ,
+                   owl:NamedIndividual ,
+                   <http://www.w3.org/2006/time#Instant> ;
+          
+          <http://www.w3.org/2006/time#inXSDDateTime> "2012-11-19T09:00:00"^^xsd:dateTime .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#endWin
+
+:endWin rdf:type :Example ,
+                 owl:NamedIndividual ,
+                 <http://www.w3.org/2006/time#Instant> ;
+        
+        <http://www.w3.org/2006/time#inXSDDateTime> "2012-11-23T17:00:00"^^xsd:dateTime .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#minDur
+
+:minDur rdf:type owl:NamedIndividual ,
+                 <http://www.w3.org/2006/time#DurationDescription> ;
+        
+        <http://www.w3.org/2006/time#hours> "2"^^xsd:nonNegativeInteger .
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#maxDur
+
+:maxDur rdf:type :Example ,
+                 owl:NamedIndividual ,
+                 <http://www.w3.org/2006/time#DurationDescription> ;
+        
+        <http://www.w3.org/2006/time#hours> "3"^^xsd:nonNegativeInteger ;
+        
+        <http://www.w3.org/2006/time#minutes> "30"^^xsd:nonNegativeInteger .
+
+
+
+
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#prefDur
+
+:prefDur rdf:type owl:NamedIndividual ,
+                  <http://www.w3.org/2006/time#DurationDescription> ;
+         
+         <http://www.w3.org/2006/time#hours> "3"^^xsd:nonNegativeInteger .
+
+

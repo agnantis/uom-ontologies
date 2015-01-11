@@ -1,1 +1,898 @@
-/home/konstantine/git/phd/ontologies/CalendarPrefs/CalendarPrefs.ttl
+@prefix : <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl> .
+
+<http://www.uom.gr/ai/ontologies/CalendarPrefs.owl> rdf:type owl:Ontology ;
+                                                    
+                                                    owl:imports <http://www.uom.gr/ai/ontologies/Activities.owl> ;
+                                                    
+                                                    owl:versionIRI <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl> ;
+                                                    
+                                                    owl:imports <http://www.w3.org/2006/time> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#avoidLocation
+
+:avoidLocation rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasActivityPreference
+
+:hasActivityPreference rdf:type owl:ObjectProperty ;
+                       
+                       rdfs:range :Preference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasCurrentWork
+
+:hasCurrentWork rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasDateTime
+
+:hasDateTime rdf:type owl:ObjectProperty ;
+             
+             rdfs:range <http://www.w3.org/2006/time#DateTimeInterval> .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasDuration
+
+:hasDuration rdf:type owl:ObjectProperty ;
+             
+             rdfs:range <http://www.w3.org/2006/time#TemporalEntity> .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasEducationBackground
+
+:hasEducationBackground rdf:type owl:FunctionalProperty ,
+                                 owl:ObjectProperty ;
+                        
+                        rdfs:range :EducationLevel .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember
+
+:hasFirstMember rdf:type owl:FunctionalProperty ,
+                         owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasGender
+
+:hasGender rdf:type owl:ObjectProperty ;
+           
+           rdfs:range :Gender .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasInterestIn
+
+:hasInterestIn rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMaxDuration
+
+:hasMaxDuration rdf:type owl:ObjectProperty ;
+                
+                rdfs:subPropertyOf :hasDuration .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration
+
+:hasMinDuration rdf:type owl:ObjectProperty ;
+                
+                rdfs:subPropertyOf :hasDuration .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasOrder
+
+:hasOrder rdf:type owl:ObjectProperty ;
+          
+          rdfs:range :OrderEnum .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasPrefDuration
+
+:hasPrefDuration rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:subPropertyOf :hasDuration .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasPreferredExecutionType
+
+:hasPreferredExecutionType rdf:type owl:ObjectProperty ;
+                           
+                           rdfs:range :ActivityExecutionType .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasPreviousWork
+
+:hasPreviousWork rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasSecondMember
+
+:hasSecondMember rdf:type owl:FunctionalProperty ,
+                          owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#homeLocation
+
+:homeLocation rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#prefersLocation
+
+:prefersLocation rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:range :LocationType .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#workLocation
+
+:workLocation rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasAge
+
+:hasAge rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        
+        rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasEmail
+
+:hasEmail rdf:type owl:DatatypeProperty ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstName
+
+:hasFirstName rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFrequency
+
+:hasFrequency rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              
+              rdfs:range xsd:nonNegativeInteger .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasLastName
+
+:hasLastName rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasNickname
+
+:hasNickname rdf:type owl:DatatypeProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#AccumulatedDuration
+
+:AccumulatedDuration rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :TemporalPreference ,
+                                     :UnaryPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#ActionPreference
+
+:ActionPreference rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :ModePreference ,
+                                  :UnaryPreference ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasPreferredExecutionType ;
+                                    owl:someValuesFrom :ActivityExecutionType
+                                  ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#ActivityExecutionType
+
+:ActivityExecutionType rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:oneOf ( :PartitionableExecution
+                                                         :NonPartitionableExecution
+                                                       )
+                                           ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#ActivityPreference
+
+:ActivityPreference rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :Preference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#ActivityType
+
+:ActivityType rdf:type owl:Class .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#AvoidLocationPreference
+
+:AvoidLocationPreference rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :LocationPreference ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :avoidLocation ;
+                                           owl:someValuesFrom :LocationType
+                                         ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#BinaryPreference
+
+:BinaryPreference rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasFirstMember ;
+                                                               owl:someValuesFrom :ActivityType
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasSecondMember ;
+                                                               owl:someValuesFrom :ActivityType
+                                                             ]
+                                                           )
+                                      ] ;
+                  
+                  rdfs:subClassOf :ActivityPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#EducationLevel
+
+:EducationLevel rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:oneOf ( :College
+                                                  :MSc_holder
+                                                  :Primary_education
+                                                  :Secondary_education
+                                                  :University
+                                                  :PhD_holder
+                                                )
+                                    ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#FrequencyPreference
+
+:FrequencyPreference rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :TemporalPreference ,
+                                     :UnaryPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Gender
+
+:Gender rdf:type owl:Class ;
+        
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:oneOf ( :Male
+                                          :Female
+                                        )
+                            ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#ImpliesPreference
+
+:ImpliesPreference rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:intersectionOf ( :ActivityPreference
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasOrder ;
+                                                                owl:someValuesFrom :OrderEnum
+                                                              ]
+                                                            )
+                                       ] ;
+                   
+                   rdfs:subClassOf :BinaryPreference ,
+                                   :ModePreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Location
+
+:Location rdf:type owl:Class .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#LocationPreference
+
+:LocationPreference rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :ActivityPreference ,
+                                    :UnaryPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#LocationType
+
+:LocationType rdf:type owl:Class .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MaxAccumulatedDuration
+
+:MaxAccumulatedDuration rdf:type owl:Class ;
+                        
+                        owl:equivalentClass [ rdf:type owl:Class ;
+                                              owl:intersectionOf ( :AccumulatedDuration
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :hasMaxDuration ;
+                                                                     owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                                   ]
+                                                                 )
+                                            ] ;
+                        
+                        rdfs:subClassOf :AccumulatedDuration .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MaxFrequency
+
+:MaxFrequency rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :FrequencyPreference
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasMaxDuration ;
+                                                           owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                         ]
+                                                       )
+                                  ] ;
+              
+              rdfs:subClassOf :FrequencyPreference ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasFrequency ;
+                                owl:someValuesFrom xsd:integer
+                              ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MaxPartDuration
+
+:MaxPartDuration rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :PartDurationPreference
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasMaxDuration ;
+                                                              owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf :PartDurationPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MaxTimeDistance
+
+:MaxTimeDistance rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :TimeDistancePreference
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasMaxDuration ;
+                                                              owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf :TimeDistancePreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDuration
+
+:MinAccumulatedDuration rdf:type owl:Class ;
+                        
+                        owl:equivalentClass [ rdf:type owl:Class ;
+                                              owl:intersectionOf ( :AccumulatedDuration
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :hasMinDuration ;
+                                                                     owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                                   ]
+                                                                 )
+                                            ] ;
+                        
+                        rdfs:subClassOf :AccumulatedDuration .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinFrequency
+
+:MinFrequency rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :FrequencyPreference
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasMinDuration ;
+                                                           owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                         ]
+                                                       )
+                                  ] ;
+              
+              rdfs:subClassOf :FrequencyPreference ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasFrequency ;
+                                owl:someValuesFrom xsd:integer
+                              ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinPartDuration
+
+:MinPartDuration rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :PartDurationPreference
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasMinDuration ;
+                                                              owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf :PartDurationPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinTimeDistance
+
+:MinTimeDistance rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :TimeDistancePreference
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasMinDuration ;
+                                                              owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf :TimeDistancePreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#ModePreference
+
+:ModePreference rdf:type owl:Class ;
+                
+                rdfs:subClassOf :ActivityPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#OrderEnum
+
+:OrderEnum rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:oneOf ( :follows
+                                             :proceeds
+                                           )
+                               ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#PartDurationPreference
+
+:PartDurationPreference rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :TemporalPreference ,
+                                        :UnaryPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#PreferLocationPreference
+
+:PreferLocationPreference rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf :LocationPreference ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :prefersLocation ;
+                                            owl:someValuesFrom :LocationType
+                                          ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Preference
+
+:Preference rdf:type owl:Class ;
+            
+            rdfs:subClassOf owl:Thing ;
+            
+            owl:disjointWith :Profile .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#PreferredAccumulatedDuration
+
+:PreferredAccumulatedDuration rdf:type owl:Class ;
+                              
+                              owl:equivalentClass [ rdf:type owl:Class ;
+                                                    owl:intersectionOf ( :AccumulatedDuration
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasPrefDuration ;
+                                                                           owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                                         ]
+                                                                       )
+                                                  ] ;
+                              
+                              rdfs:subClassOf :AccumulatedDuration .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#PreferredFrequency
+
+:PreferredFrequency rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Class ;
+                                          owl:intersectionOf ( :FrequencyPreference
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasPrefDuration ;
+                                                                 owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                               ]
+                                                             )
+                                        ] ;
+                    
+                    rdfs:subClassOf :FrequencyPreference ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasFrequency ;
+                                      owl:someValuesFrom xsd:integer
+                                    ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#PreferredPartDuration
+
+:PreferredPartDuration rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:intersectionOf ( :PartDurationPreference
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasPrefDuration ;
+                                                                    owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                                  ]
+                                                                )
+                                           ] ;
+                       
+                       rdfs:subClassOf :PartDurationPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#PreferredTimeDistance
+
+:PreferredTimeDistance rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:intersectionOf ( :TimeDistancePreference
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :hasPrefDuration ;
+                                                                    owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
+                                                                  ]
+                                                                )
+                                           ] ;
+                       
+                       rdfs:subClassOf :TimeDistancePreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Profile
+
+:Profile rdf:type owl:Class ;
+         
+         rdfs:subClassOf owl:Thing .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#TemporalPreference
+
+:TemporalPreference rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :ActivityPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#TimeDistancePreference
+
+:TimeDistancePreference rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :BinaryPreference ,
+                                        :TemporalPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Topic
+
+:Topic rdf:type owl:Class .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#UnaryPreference
+
+:UnaryPreference rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasFirstMember ;
+                                                              owl:someValuesFrom :ActivityType
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasSecondMember ;
+                                                              owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf :ActivityPreference .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#UserProfile
+
+:UserProfile rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Profile ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasActivityPreference ;
+                               owl:someValuesFrom :ActivityPreference
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAge ;
+                               owl:someValuesFrom xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGender ;
+                               owl:someValuesFrom :Gender
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasPreviousWork ;
+                               owl:someValuesFrom owl:Thing
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :homeLocation ;
+                               owl:someValuesFrom :Location
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasNickname ;
+                               owl:someValuesFrom rdfs:Literal
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasLastName ;
+                               owl:someValuesFrom rdfs:Literal
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasEducationBackground ;
+                               owl:someValuesFrom :EducationLevel
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :workLocation ;
+                               owl:someValuesFrom :Location
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasEmail ;
+                               owl:someValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasInterestIn ;
+                               owl:someValuesFrom :Topic
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasCurrentWork ;
+                               owl:someValuesFrom owl:Thing
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasFirstName ;
+                               owl:someValuesFrom rdfs:Literal
+                             ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#College
+
+:College rdf:type :EducationLevel ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Female
+
+:Female rdf:type :Gender ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MSc_holder
+
+:MSc_holder rdf:type :EducationLevel ,
+                     owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Male
+
+:Male rdf:type :Gender ,
+               owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#NonPartitionableExecution
+
+:NonPartitionableExecution rdf:type :ActivityExecutionType ,
+                                    owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#PartitionableExecution
+
+:PartitionableExecution rdf:type :ActivityExecutionType ,
+                                 owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#PhD_holder
+
+:PhD_holder rdf:type :EducationLevel ,
+                     owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Primary_education
+
+:Primary_education rdf:type :EducationLevel ,
+                            owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Secondary_education
+
+:Secondary_education rdf:type :EducationLevel ,
+                              owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#University
+
+:University rdf:type :EducationLevel ,
+                     owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#follows
+
+:follows rdf:type :OrderEnum ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#proceeds
+
+:proceeds rdf:type :OrderEnum ,
+                   owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ActionPreference
+                :LocationPreference
+                :TemporalPreference
+              )
+] .
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :College
+                        :MSc_holder
+                        :PhD_holder
+                        :Primary_education
+                        :Secondary_education
+                        :University
+                      )
+] .
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :NonPartitionableExecution
+                        :PartitionableExecution
+                      )
+] .
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :follows
+                        :proceeds
+                      )
+] .
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Female
+                        :Male
+                      )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+
