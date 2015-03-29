@@ -8,6 +8,8 @@
 
 <http://www.uom.gr/ai/ontologies/Activities.owl> rdf:type owl:Ontology ;
                                                  
+                                                 owl:imports <http://www.opengis.net/gml/> ;
+                                                 
                                                  owl:versionIRI <http://www.uom.gr/ai/ontologies/Activities.owl> ;
                                                  
                                                  owl:imports <http://www.w3.org/2006/time> .
@@ -121,7 +123,9 @@
 :hasLatitude rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
              
-             rdfs:range xsd:double .
+             rdfs:range xsd:double ;
+             
+             owl:equivalentProperty <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
 
 
 
@@ -130,7 +134,9 @@
 :hasLongitude rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
               
-              rdfs:range xsd:double .
+              rdfs:range xsd:double ;
+              
+              owl:equivalentProperty <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
 
 
 
@@ -139,6 +145,16 @@
 :hasName rdf:type owl:DatatypeProperty ;
          
          rdfs:range xsd:string .
+
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+
+
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+
 
 
 
@@ -643,11 +659,11 @@
                
                rdfs:subClassOf :SimpleActivity ;
                
-               owl:disjointUnionOf ( :CommunalActivity
-                                     :SolitaryActivity
-                                   ) ,
-                                   ( :ActiveActivity
+               owl:disjointUnionOf ( :ActiveActivity
                                      :PassiveActivity
+                                   ) ,
+                                   ( :CommunalActivity
+                                     :SolitaryActivity
                                    ) .
 
 
@@ -1010,26 +1026,6 @@ However, we can easiliy trasform the ontology to become OWL 2 DL compatible (htt
                 
                 rdfs:subClassOf :Activity ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasEndTime ;
-                                  owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasStartTime ;
-                                  owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasVenue ;
-                                  owl:someValuesFrom owl:Thing
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasDuration ;
-                                  owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasTemporalWindow ;
-                                  owl:someValuesFrom :TimeInterval
-                                ] ,
-                                [ rdf:type owl:Restriction ;
                                   owl:onProperty :transportationTypeToVenue ;
                                   owl:someValuesFrom owl:Thing
                                 ] ,
@@ -1038,8 +1034,28 @@ However, we can easiliy trasform the ontology to become OWL 2 DL compatible (htt
                                   owl:someValuesFrom owl:Thing
                                 ] ,
                                 [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStartTime ;
+                                  owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasEndTime ;
+                                  owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
                                   owl:onProperty :requires ;
                                   owl:someValuesFrom owl:Thing
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasVenue ;
+                                  owl:someValuesFrom owl:Thing
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasTemporalWindow ;
+                                  owl:someValuesFrom :TimeInterval
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasDuration ;
+                                  owl:someValuesFrom <http://www.w3.org/2006/time#DurationDescription>
                                 ] .
 
 
@@ -2882,6 +2898,30 @@ However, we can easiliy trasform the ontology to become OWL 2 DL compatible (htt
 
 
 [ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AeroActivity
+                :BeachActivity
+                :CulturalActivity
+                :DesertActivity
+                :ForestActivity
+                :MountainActivity
+                :WaterActivity
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :GeoLocation
+                :Participant
+                :SimpleActivity
+                :Transportation
+                :Venue
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :LakeActivity
+                :RiverActivity
+                :SeaActivity
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :ArtSchoolActivity
                 :AthleticSchoolActivity
                 :ChurchSchoolActivity
@@ -2905,20 +2945,6 @@ However, we can easiliy trasform the ontology to become OWL 2 DL compatible (htt
                       )
 ] .
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :LakeActivity
-                :RiverActivity
-                :SeaActivity
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :GeoLocation
-                :Participant
-                :SimpleActivity
-                :Transportation
-                :Venue
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( :BaseballActivity
                 :BasketballActivity
                 :CyclingActivity
@@ -2931,16 +2957,6 @@ However, we can easiliy trasform the ontology to become OWL 2 DL compatible (htt
                 :TennisActivity
                 :VolleyballActivity
                 :WalkingActivity
-              )
-] .
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :AeroActivity
-                :BeachActivity
-                :CulturalActivity
-                :DesertActivity
-                :ForestActivity
-                :MountainActivity
-                :WaterActivity
               )
 ] .
 
