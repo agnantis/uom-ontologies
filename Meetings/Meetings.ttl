@@ -90,8 +90,11 @@
 
 :hasExcludedInterval rdf:type owl:ObjectProperty ;
                      
-                     rdfs:range :ComboInterval ,
-                                :Interval .
+                     rdfs:range [ rdf:type owl:Class ;
+                                  owl:unionOf ( :ComboInterval
+                                                :Interval
+                                              )
+                                ] .
 
 
 
@@ -156,12 +159,15 @@
 
 
 
-###  http://www.uom.gr/ai/ontologies/Meetings.owl#hasPreferredinterval
+###  http://www.uom.gr/ai/ontologies/Meetings.owl#hasPreferredInterval
 
-:hasPreferredinterval rdf:type owl:ObjectProperty ;
+:hasPreferredInterval rdf:type owl:ObjectProperty ;
                       
-                      rdfs:range :ComboInterval ,
-                                 :Interval .
+                      rdfs:range [ rdf:type owl:Class ;
+                                   owl:unionOf ( :ComboInterval
+                                                 :Interval
+                                               )
+                                 ] .
 
 
 
@@ -264,11 +270,11 @@
                  
                  rdfs:subClassOf :Meeting ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty :hasStartTime ;
+                                   owl:onProperty :hasEndTime ;
                                    owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
                                  ] ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty :hasEndTime ;
+                                   owl:onProperty :hasStartTime ;
                                    owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
                                  ] .
 
@@ -482,12 +488,12 @@
                            owl:someValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty :name ;
-                           owl:someValuesFrom xsd:string
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty :hasLocation ;
                            owl:someValuesFrom :Location
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :name ;
+                           owl:someValuesFrom xsd:string
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :hasParticipant ;
@@ -523,16 +529,16 @@ The order is as follows (from less to most important): TotallyImmovable -> Sligh
 :Participant rdf:type owl:Class ;
              
              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasTimeProgram ;
+                               owl:someValuesFrom :TimeProgramOrganizer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty :hasType ;
                                owl:someValuesFrom :PresenseType
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :hasRole ;
                                owl:someValuesFrom :ParticipantRole
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasTimeProgram ;
-                               owl:someValuesFrom :TimeProgramOrganizer
                              ] .
 
 
@@ -603,16 +609,16 @@ The order is as follows (from less to most important): TotallyImmovable -> Sligh
 :TimeProgramOrganizer rdf:type owl:Class ;
                       
                       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                        owl:onProperty :hasCalendar ;
-                                        owl:someValuesFrom :Calendar
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty :hasExcludedInterval ;
                                         owl:someValuesFrom owl:Thing
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty :hasPreferredinterval ;
+                                        owl:onProperty :hasPreferredInterval ;
                                         owl:someValuesFrom owl:Thing
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasCalendar ;
+                                        owl:someValuesFrom :Calendar
                                       ] .
 
 
@@ -623,10 +629,6 @@ The order is as follows (from less to most important): TotallyImmovable -> Sligh
                      
                      rdfs:subClassOf :Meeting ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasStartTimeWindow ;
-                                       owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
-                                     ] ,
-                                     [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasMaxDuration ;
                                        owl:someValuesFrom owl:Thing
                                      ] ,
@@ -635,12 +637,16 @@ The order is as follows (from less to most important): TotallyImmovable -> Sligh
                                        owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
                                      ] ,
                                      [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasPreferredDuration ;
+                                       owl:someValuesFrom owl:Thing
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasMinDuration ;
                                        owl:someValuesFrom owl:Thing
                                      ] ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasPreferredDuration ;
-                                       owl:someValuesFrom owl:Thing
+                                       owl:onProperty :hasStartTimeWindow ;
+                                       owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
                                      ] .
 
 
@@ -886,14 +892,6 @@ The order is as follows (from less to most important): TotallyImmovable -> Sligh
                       )
 ] .
 [ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :Crusial
-                        :FairlyImportant
-                        :Important
-                        :SlightlyImportant
-                        :Trivial
-                      )
-] .
-[ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :Chairman
                         :Guest
                         :Member
@@ -902,11 +900,11 @@ The order is as follows (from less to most important): TotallyImmovable -> Sligh
                       )
 ] .
 [ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :FairlyMovable
-                        :FullyMovable
-                        :Movable
-                        :SlightlyMovable
-                        :TotallyImmovable
+  owl:distinctMembers ( :Crusial
+                        :FairlyImportant
+                        :Important
+                        :SlightlyImportant
+                        :Trivial
                       )
 ] .
 [ rdf:type owl:AllDifferent ;
@@ -915,6 +913,14 @@ The order is as follows (from less to most important): TotallyImmovable -> Sligh
                         :PermittedPresence
                         :ProhibitedPresence
                         :RequiredPresence
+                      )
+] .
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :FairlyMovable
+                        :FullyMovable
+                        :Movable
+                        :SlightlyMovable
+                        :TotallyImmovable
                       )
 ] .
 
