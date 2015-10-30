@@ -21,9 +21,21 @@
 #################################################################
 
 
+###  http://www.uom.gr/ai/ontologies/ActivitiesExample.owl#CleanTheHouse
+
+:CleanTheHouse rdf:type activities:ActivitiesExample ,
+                        activities:ComplexUnionActivity ,
+                        owl:NamedIndividual ;
+               
+               activities:hasPart activities:Clothwashing ,
+                                  activities:Dishwashing ,
+                                  activities:Vacuuming .
+
+
+
 ###  http://www.uom.gr/ai/ontologies/ActivitiesExamples.owl#VisitingMall
 
-:VisitingMall rdf:type activities:ComplexOneOfActivity ,
+:VisitingMall rdf:type activities:ComplexDisjoinActivity ,
                        owl:NamedIndividual ;
               
               activities:hasPart :Visiting_mall_A ,

@@ -1,0 +1,431 @@
+@prefix : <http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.uom.gr/ai/ontologies/ActivityParserExample.owl> .
+
+<http://www.uom.gr/ai/ontologies/ActivityParserExample.owl> rdf:type owl:Ontology ;
+                                                            
+                                                            owl:versionIRI <http://www.uom.gr/ai/ontologies/ActivityParserExample.owl> ;
+                                                            
+                                                            owl:imports <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl> .
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_Citygate_location
+
+:Ex1_Citygate_location rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Location> ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasLongitude> 22.910675 ;
+                       
+                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasLatitude> 40.643414 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_Citygate_mall
+
+:Ex1_Citygate_mall rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#Mall> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "City Gate Mall" ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasLocation> :Ex1_Citygate_location .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_Cosmos_location
+
+:Ex1_Cosmos_location rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#Location> ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasLongitude> 22.9933441 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasLatitude> 40.5557191 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_Cosmos_mall
+
+:Ex1_Cosmos_mall rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#Mall> ,
+                          owl:NamedIndividual ,
+                          owl:Thing ;
+                 
+                 <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Cosmos mall" ;
+                 
+                 <http://www.uom.gr/ai/ontologies/Activities.owl#hasLocation> :Ex1_Cosmos_location ;
+                 
+                 owl:sameAs :Ex2_Doctor_Office .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_EndInterval1
+
+:Ex1_EndInterval1 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                           owl:NamedIndividual ,
+                           owl:Thing ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 11 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 21 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 5 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_EndInterval2
+
+:Ex1_EndInterval2 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                           owl:NamedIndividual ,
+                           owl:Thing ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 11 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 20 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 6 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_Shopping_at_the_mall
+
+:Ex1_Shopping_at_the_mall rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#SimpleTemplateActivity> ,
+                                   owl:NamedIndividual ,
+                                   owl:Thing ;
+                          
+                          <http://www.uom.gr/ai/ontologies/Activities.owl#hasDescription> "This week's shopping at the mall" ;
+                          
+                          <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Shopping at the mall" ;
+                          
+                          <http://www.uom.gr/ai/ontologies/Activities.owl#hasPossibleVenue> :Ex1_Citygate_mall ,
+                                                                                            :Ex1_Cosmos_mall ;
+                          
+                          <http://www.uom.gr/ai/ontologies/Activities.owl#hasTemporalWindow> :Ex1_TimeInterval1 ,
+                                                                                             :Ex1_TimeInterval2 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_StartInterval1
+
+:Ex1_StartInterval1 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 11 ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 18 ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 5 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_StartInterval2
+
+:Ex1_StartInterval2 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 11 ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 15 ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 6 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_TimeInterval1
+
+:Ex1_TimeInterval1 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeInterval> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :Ex1_EndInterval1 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :Ex1_StartInterval1 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex1_TimeInterval2
+
+:Ex1_TimeInterval2 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeInterval> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :Ex1_EndInterval2 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :Ex1_StartInterval2 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex23_OrderConstraint
+
+:Ex23_OrderConstraint rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#OrderingConstraint> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasSecondMember> :Ex2_Doctor_Appointment ;
+                      
+                      <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :Ex3_Jogging .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex2_Doctor_Appointment
+
+:Ex2_Doctor_Appointment rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#WeeklyTemplateActivity> ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Doctor appointment" ;
+                        
+                        <http://www.uom.gr/ai/ontologies/Activities.owl#hasPossibleVenue> :Ex2_Doctor_Office ;
+                        
+                        <http://www.uom.gr/ai/ontologies/Activities.owl#hasPeriodicInterval> :Ex2_Week_Interval .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex2_Doctor_Office
+
+:Ex2_Doctor_Office rdf:type owl:NamedIndividual ,
+                            owl:Thing .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex2_End_Time
+
+:Ex2_End_Time rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TimeDescriptor> ,
+                       owl:NamedIndividual ,
+                       owl:Thing ;
+              
+              <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 15 ;
+              
+              <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 20 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex2_Friday_Descriptor
+
+:Ex2_Friday_Descriptor rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DayDescriptor> ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasDayOfWeek> <http://www.uom.gr/ai/ontologies/Activities.owl#FRIDAY> .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex2_Monday_Descriptor
+
+:Ex2_Monday_Descriptor rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DayDescriptor> ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasDayOfWeek> <http://www.uom.gr/ai/ontologies/Activities.owl#MONDAY> .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex2_Start_Time
+
+:Ex2_Start_Time rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TimeDescriptor> ,
+                         owl:NamedIndividual ,
+                         owl:Thing ;
+                
+                <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                
+                <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 18 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex2_Time_Interval
+
+:Ex2_Time_Interval rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TimeInterval> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :Ex2_End_Time ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :Ex2_Start_Time ;
+                   
+                   owl:sameAs :Ex3_Time_Interval ,
+                              :Ex4_Time_Interval .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex2_Week_Interval
+
+:Ex2_Week_Interval rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#WeekInterval> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasTemporalDescriptor> :Ex2_Friday_Descriptor ,
+                                                                                          :Ex2_Monday_Descriptor ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasTimeInterval> :Ex2_Time_Interval .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex3_Day_Interval
+
+:Ex3_Day_Interval rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DayInterval> ,
+                           owl:NamedIndividual ,
+                           owl:Thing ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasTimeInterval> :Ex3_Time_Interval .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex3_DurationDescriptor
+
+:Ex3_DurationDescriptor rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DurationDescriptor> ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 2 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex3_Jogging
+
+:Ex3_Jogging rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DailyTemplateActivity> ,
+                      owl:NamedIndividual ,
+                      owl:Thing ;
+             
+             <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Everyday jogging session" ;
+             
+             <http://www.uom.gr/ai/ontologies/Activities.owl#hasPeriodicInterval> :Ex3_Day_Interval .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex3_MaxDurationPref
+
+:Ex3_MaxDurationPref rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MaxAccumulatedDurationPreference> ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasUtility> "65.0"^^xsd:double ;
+                     
+                     <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMaxDuration> :Ex3_DurationDescriptor ;
+                     
+                     <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :Ex3_Jogging .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex3_Time_Interval
+
+:Ex3_Time_Interval rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TimeInterval> ,
+                            owl:NamedIndividual ,
+                            owl:Thing .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex4_ActiveDomain
+
+:Ex4_ActiveDomain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                           owl:NamedIndividual ,
+                           owl:Thing ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :Ex4_ActiveDomainEnd ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :Ex4_ActiveDomainStart .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex4_ActiveDomainEnd
+
+:Ex4_ActiveDomainEnd rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 12 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2016 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 31 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex4_ActiveDomainStart
+
+:Ex4_ActiveDomainStart rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 1 ;
+                       
+                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 1 ;
+                       
+                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex4_Month
+
+:Ex4_Month rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                    owl:NamedIndividual ,
+                    owl:Thing ;
+           
+           <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 10 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex4_Month_Interval
+
+:Ex4_Month_Interval rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#MonthInterval> ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasTemporalDescriptor> :Ex4_Month ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasTimeInterval> :Ex4_Time_Interval .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex4_Time_Interval
+
+:Ex4_Time_Interval rdf:type owl:NamedIndividual ,
+                            owl:Thing .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Ex4_Wash_the_car
+
+:Ex4_Wash_the_car rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#MonthlyTemplateActivity> ,
+                           owl:NamedIndividual ,
+                           owl:Thing ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Wash the car" ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasActiveDomain> :Ex4_ActiveDomain ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasPeriodicInterval> :Ex4_Month_Interval .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+
