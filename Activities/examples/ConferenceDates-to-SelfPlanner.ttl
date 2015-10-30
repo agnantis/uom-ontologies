@@ -1,0 +1,804 @@
+@prefix : <http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.uom.gr/ai/ontologies/ActivityParserExample.owl> .
+
+<http://www.uom.gr/ai/ontologies/ActivityParserExample.owl> rdf:type owl:Ontology ;
+                                                            
+                                                            owl:versionIRI <http://www.uom.gr/ai/ontologies/ActivityParserExample.owl> ;
+                                                            
+                                                            owl:imports <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl> .
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AbsractDomainEnd
+
+:AbsractDomainEnd rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                           owl:NamedIndividual ,
+                           owl:Thing ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 11 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 13 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2014 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AbstractDomain
+
+:AbstractDomain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateInterval> ,
+                         owl:NamedIndividual ,
+                         owl:Thing ;
+                
+                <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :AbsractDomainEnd ;
+                
+                <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :AbstractDomainStart .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AbstractDomainStart
+
+:AbstractDomainStart rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 10 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2014 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 31 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AbstractDuration
+
+:AbstractDuration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
+                           owl:NamedIndividual ,
+                           owl:Thing ;
+                  
+                  <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AbstractDuration ;
+                  
+                  <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration10Hours .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDay1
+
+:AttendConferenceDay1 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TemplateActivity> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Attend Conference - Day1" ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasActiveDomain> :AttendConferenceDomain ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasTemporalWindow> :ConferenceDay1Domain .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDay2
+
+:AttendConferenceDay2 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TemplateActivity> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Attend Conference - Day2" ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasActiveDomain> :AttendConferenceDomain ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasTemporalWindow> :ConferenceDay2Domain .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDay3
+
+:AttendConferenceDay3 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TemplateActivity> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Attend Conference - Day3" ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasActiveDomain> :AttendConferenceDomain ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasTemporalWindow> :ConferenceDay3Domain .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDay4
+
+:AttendConferenceDay4 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TemplateActivity> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Attend Conference - Day4" ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasActiveDomain> :AttendConferenceDomain ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasTemporalWindow> :ConferenceDay4Domain .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDay5
+
+:AttendConferenceDay5 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TemplateActivity> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Attend Conference - Day5" ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasActiveDomain> :AttendConferenceDomain ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasTemporalWindow> :ConferenceDay5Domain .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDomain
+
+:AttendConferenceDomain rdf:type owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :AttendConferenceDomainEnd ;
+                        
+                        <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :AttendConferenceDomainStart .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDomainEnd
+
+:AttendConferenceDomainEnd rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                                    owl:NamedIndividual ,
+                                    owl:Thing ;
+                           
+                           <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 11 ;
+                           
+                           <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                           
+                           <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDomainStart
+
+:AttendConferenceDomainStart rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                                      owl:NamedIndividual ,
+                                      owl:Thing ;
+                             
+                             <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                             
+                             <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 ;
+                             
+                             <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 7 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#CameraReadyDomain
+
+:CameraReadyDomain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateInterval> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :CameraReadyDomainEnd ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :CameraReadyDomainStart .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#CameraReadyDomainEnd
+
+:CameraReadyDomainEnd rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 26 ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 3 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#CameraReadyDomainStart
+
+:CameraReadyDomainStart rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                                 owl:NamedIndividual ,
+                                 owl:Thing ;
+                        
+                        <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 1 ;
+                        
+                        <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                        
+                        <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 21 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#CameraReadyDuration
+
+:CameraReadyDuration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
+                              owl:NamedIndividual ;
+                     
+                     <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours ;
+                     
+                     <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PrepareCameraReady .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Conference5Duration
+
+:Conference5Duration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
+                              owl:NamedIndividual ;
+                     
+                     <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay5 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay1Domain
+
+:ConferenceDay1Domain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeInterval> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :ConferenceDay1End ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :ConferenceDay1Start .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay1Duration
+
+:ConferenceDay1Duration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
+                                 owl:NamedIndividual ;
+                        
+                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay1 ;
+                        
+                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay1End
+
+:ConferenceDay1End rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 17 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 7 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay1Start
+
+:ConferenceDay1Start rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 10 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 7 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay2Domain
+
+:ConferenceDay2Domain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeInterval> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :ConferenceDay2End ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :ConferenceDay2Start .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay2Duration
+
+:ConferenceDay2Duration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
+                                 owl:NamedIndividual ;
+                        
+                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay2 ;
+                        
+                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay2End
+
+:ConferenceDay2End rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 17 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 8 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay2Start
+
+:ConferenceDay2Start rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 10 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 8 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay3Domain
+
+:ConferenceDay3Domain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeInterval> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :ConferenceDay3End ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :ConferenceDay3Start .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay3Duration
+
+:ConferenceDay3Duration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
+                                 owl:NamedIndividual ;
+                        
+                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay3 ;
+                        
+                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay3End
+
+:ConferenceDay3End rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 17 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 9 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay3Start
+
+:ConferenceDay3Start rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 10 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 9 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay4Domain
+
+:ConferenceDay4Domain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeInterval> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :ConferenceDay4End ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :ConferenceDay4Start .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay4Duration
+
+:ConferenceDay4Duration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
+                                 owl:NamedIndividual ;
+                        
+                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay4End
+
+:ConferenceDay4End rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 10 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 17 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay4Start
+
+:ConferenceDay4Start rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 10 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 10 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay5Domain
+
+:ConferenceDay5Domain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeInterval> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :ConferenceDay5End ;
+                      
+                      <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :ConferenceDay5Start .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay5End
+
+:ConferenceDay5End rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 11 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 17 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay5Start
+
+:ConferenceDay5Start rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 10 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 11 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#DailyPeriodicity
+
+:DailyPeriodicity rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DayInterval> ,
+                           owl:NamedIndividual ,
+                           owl:Thing ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasTimeInterval> :DailyTimeInterval .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#DailyTimeInterval
+
+:DailyTimeInterval rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TimeInterval> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :TimeIntervalEnd ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :TimeIntervalStart .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Duration10Hours
+
+:Duration10Hours rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DurationDescriptor> ,
+                          owl:NamedIndividual ,
+                          owl:Thing ;
+                 
+                 <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 10 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Duration20Hours
+
+:Duration20Hours rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DurationDescriptor> ,
+                          owl:NamedIndividual ,
+                          owl:Thing ;
+                 
+                 <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 20 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Duration30Hours
+
+:Duration30Hours rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DurationDescriptor> ,
+                          owl:NamedIndividual ,
+                          owl:Thing ;
+                 
+                 <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 30 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Duration7Hours
+
+:Duration7Hours rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DurationDescriptor> ,
+                         owl:NamedIndividual ,
+                         owl:Thing ;
+                
+                <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 7 ;
+                
+                <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay4 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#IsInterruptible
+
+:IsInterruptible rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#ActionConstraint> ,
+                          owl:NamedIndividual ;
+                 
+                 <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PrepareCameraReady ;
+                 
+                 <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#executionType> <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#PreemptiveExecution> .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#IsNotInterruptible
+
+:IsNotInterruptible rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#ActionConstraint> ,
+                             owl:NamedIndividual ;
+                    
+                    <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay1 ,
+                                                                                       :AttendConferenceDay2 ,
+                                                                                       :AttendConferenceDay3 ,
+                                                                                       :AttendConferenceDay4 ,
+                                                                                       :AttendConferenceDay5 ;
+                    
+                    <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#executionType> <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#NotPreemptiveExecution> .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PaperDomain
+
+:PaperDomain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateInterval> ,
+                      owl:NamedIndividual ,
+                      owl:Thing ;
+             
+             <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :PaperDomainEnd ;
+             
+             <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :PaperDomainStart .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PaperDomainEnd
+
+:PaperDomainEnd rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                         owl:NamedIndividual ,
+                         owl:Thing ;
+                
+                <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 11 ;
+                
+                <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 17 ;
+                
+                <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2014 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PaperDomainStart
+
+:PaperDomainStart rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                           owl:NamedIndividual ,
+                           owl:Thing ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 10 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 18 ;
+                  
+                  <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2014 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PaperDuration
+
+:PaperDuration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
+                        owl:NamedIndividual ,
+                        owl:Thing ;
+               
+               <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration30Hours ;
+               
+               <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PaperDuration .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PrepareAbstract
+
+:PrepareAbstract rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DailyTemplateActivity> ,
+                          owl:NamedIndividual ,
+                          owl:Thing ;
+                 
+                 <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Prepare the abstract" ;
+                 
+                 <http://www.uom.gr/ai/ontologies/Activities.owl#hasActiveDomain> :AbstractDomain ;
+                 
+                 <http://www.uom.gr/ai/ontologies/Activities.owl#hasPeriodicInterval> :DailyPeriodicity .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PrepareCameraReady
+
+:PrepareCameraReady rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DailyTemplateActivity> ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Prepare Camera Ready version" ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasActiveDomain> :CameraReadyDomain ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasPeriodicInterval> :DailyPeriodicity .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PreparePaper
+
+:PreparePaper rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DailyTemplateActivity> ,
+                       owl:NamedIndividual ,
+                       owl:Thing ;
+              
+              <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Prepare the paper" ;
+              
+              <http://www.uom.gr/ai/ontologies/Activities.owl#hasPeriodicInterval> :DailyPeriodicity ;
+              
+              <http://www.uom.gr/ai/ontologies/Activities.owl#hasActiveDomain> :PaperDomain .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PreparePresentation
+
+:PreparePresentation rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DailyTemplateActivity> ,
+                              owl:NamedIndividual ,
+                              owl:Thing ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasName> "Prepare the presentation" ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasPeriodicInterval> :DailyPeriodicity ;
+                     
+                     <http://www.uom.gr/ai/ontologies/Activities.owl#hasActiveDomain> :PresentationDomain .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PresentationDomain
+
+:PresentationDomain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateInterval> ,
+                             owl:NamedIndividual ,
+                             owl:Thing ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :PresentationDomainEnd ;
+                    
+                    <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :PresentationDomainStart .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PresentationDomainEnd
+
+:PresentationDomainEnd rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                                owl:NamedIndividual ,
+                                owl:Thing ;
+                       
+                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                       
+                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 6 ;
+                       
+                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 6 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PresentationDomainStart
+
+:PresentationDomainStart rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateDescriptor> ,
+                                  owl:NamedIndividual ,
+                                  owl:Thing ;
+                         
+                         <http://www.uom.gr/ai/ontologies/Activities.owl#hasYear> 2015 ;
+                         
+                         <http://www.uom.gr/ai/ontologies/Activities.owl#hasDay> 24 ;
+                         
+                         <http://www.uom.gr/ai/ontologies/Activities.owl#hasMonth> 5 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#PresentationDuration
+
+:PresentationDuration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
+                               owl:NamedIndividual ,
+                               owl:Thing ;
+                      
+                      <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration20Hours ;
+                      
+                      <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PresentationDuration .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#TimeIntervalEnd
+
+:TimeIntervalEnd rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TimeDescriptor> ,
+                          owl:NamedIndividual ,
+                          owl:Thing ;
+                 
+                 <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                 
+                 <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 17 .
+
+
+
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#TimeIntervalStart
+
+:TimeIntervalStart rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TimeDescriptor> ,
+                            owl:NamedIndividual ,
+                            owl:Thing ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasMinute> 0 ;
+                   
+                   <http://www.uom.gr/ai/ontologies/Activities.owl#hasHour> 9 .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+

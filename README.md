@@ -5,3 +5,4 @@ Currently contains ontologies for:
   * Activites
   * Meetings
   * Calendar Preferences
+  * Conferences
