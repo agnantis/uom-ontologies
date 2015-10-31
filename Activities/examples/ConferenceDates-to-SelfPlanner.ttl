@@ -66,15 +66,15 @@
                            owl:NamedIndividual ,
                            owl:Thing ;
                   
-                  <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AbstractDuration ;
+                  <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration10Hours ;
                   
-                  <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration10Hours .
+                  <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PrepareAbstract .
 
 
 
 ###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDay1
 
-:AttendConferenceDay1 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TemplateActivity> ,
+:AttendConferenceDay1 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#SimpleTemplateActivity> ,
                                owl:NamedIndividual ,
                                owl:Thing ;
                       
@@ -88,7 +88,7 @@
 
 ###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDay2
 
-:AttendConferenceDay2 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TemplateActivity> ,
+:AttendConferenceDay2 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#SimpleTemplateActivity> ,
                                owl:NamedIndividual ,
                                owl:Thing ;
                       
@@ -102,7 +102,7 @@
 
 ###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDay3
 
-:AttendConferenceDay3 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TemplateActivity> ,
+:AttendConferenceDay3 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#SimpleTemplateActivity> ,
                                owl:NamedIndividual ,
                                owl:Thing ;
                       
@@ -116,7 +116,7 @@
 
 ###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDay4
 
-:AttendConferenceDay4 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TemplateActivity> ,
+:AttendConferenceDay4 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#SimpleTemplateActivity> ,
                                owl:NamedIndividual ,
                                owl:Thing ;
                       
@@ -130,7 +130,7 @@
 
 ###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#AttendConferenceDay5
 
-:AttendConferenceDay5 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#TemplateActivity> ,
+:AttendConferenceDay5 rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#SimpleTemplateActivity> ,
                                owl:NamedIndividual ,
                                owl:Thing ;
                       
@@ -232,17 +232,6 @@
 
 
 
-###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#Conference5Duration
-
-:Conference5Duration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
-                              owl:NamedIndividual ;
-                     
-                     <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay5 ;
-                     
-                     <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
-
-
-
 ###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay1Domain
 
 :ConferenceDay1Domain rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeInterval> ,
@@ -252,17 +241,6 @@
                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :ConferenceDay1End ;
                       
                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :ConferenceDay1Start .
-
-
-
-###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay1Duration
-
-:ConferenceDay1Duration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
-                                 owl:NamedIndividual ;
-                        
-                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay1 ;
-                        
-                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
 
 
 
@@ -314,17 +292,6 @@
 
 
 
-###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay2Duration
-
-:ConferenceDay2Duration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
-                                 owl:NamedIndividual ;
-                        
-                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay2 ;
-                        
-                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
-
-
-
 ###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay2End
 
 :ConferenceDay2End rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
@@ -373,17 +340,6 @@
 
 
 
-###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay3Duration
-
-:ConferenceDay3Duration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
-                                 owl:NamedIndividual ;
-                        
-                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay3 ;
-                        
-                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
-
-
-
 ###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay3End
 
 :ConferenceDay3End rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DateTimeDescriptor> ,
@@ -429,15 +385,6 @@
                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasEndTime> :ConferenceDay4End ;
                       
                       <http://www.uom.gr/ai/ontologies/Activities.owl#hasStartTime> :ConferenceDay4Start .
-
-
-
-###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDay4Duration
-
-:ConferenceDay4Duration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
-                                 owl:NamedIndividual ;
-                        
-                        <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
 
 
 
@@ -525,6 +472,21 @@
 
 
 
+###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#ConferenceDayDuration
+
+:ConferenceDayDuration rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#MinAccumulatedDurationConstraint> ,
+                                owl:NamedIndividual ;
+                       
+                       <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :AttendConferenceDay1 ,
+                                                                                          :AttendConferenceDay2 ,
+                                                                                          :AttendConferenceDay3 ,
+                                                                                          :AttendConferenceDay4 ,
+                                                                                          :AttendConferenceDay5 ;
+                       
+                       <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration7Hours .
+
+
+
 ###  http://www.uom.gr/ai/ontologies/ActivityParserExample.owl#DailyPeriodicity
 
 :DailyPeriodicity rdf:type <http://www.uom.gr/ai/ontologies/Activities.owl#DayInterval> ,
@@ -594,7 +556,10 @@
 :IsInterruptible rdf:type <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#ActionConstraint> ,
                           owl:NamedIndividual ;
                  
-                 <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PrepareCameraReady ;
+                 <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PrepareAbstract ,
+                                                                                    :PrepareCameraReady ,
+                                                                                    :PreparePaper ,
+                                                                                    :PreparePresentation ;
                  
                  <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#executionType> <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#PreemptiveExecution> .
 
@@ -663,7 +628,7 @@
                
                <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration30Hours ;
                
-               <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PaperDuration .
+               <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PreparePaper .
 
 
 
@@ -771,7 +736,7 @@
                       
                       <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasMinDuration> :Duration20Hours ;
                       
-                      <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PresentationDuration .
+                      <http://www.uom.gr/ai/ontologies/CalendarPrefs.owl#hasFirstMember> :PreparePresentation .
 
 
 
