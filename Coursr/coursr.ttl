@@ -1,0 +1,1162 @@
+@prefix : <http://www.uom.gr/ai/ontologies/Coursr#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.uom.gr/ai/ontologies/Coursr> .
+
+<http://www.uom.gr/ai/ontologies/Coursr> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#attendanceType
+
+:attendanceType rdf:type owl:FunctionalProperty ,
+                         owl:ObjectProperty ;
+                
+                rdfs:range :AttendanceType .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasActivity
+
+:hasActivity rdf:type owl:FunctionalProperty ,
+                      owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasApplicant
+
+:hasApplicant rdf:type owl:FunctionalProperty ,
+                       owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasAttendance
+
+:hasAttendance rdf:type owl:FunctionalProperty ,
+                        owl:ObjectProperty ;
+               
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasDayRecord
+
+:hasDayRecord rdf:type owl:ObjectProperty ;
+              
+              rdfs:range :DayRecord .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasExam
+
+:hasExam rdf:type owl:ObjectProperty ;
+         
+         rdfs:domain :Course ;
+         
+         rdfs:range :Exam .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasFirstMember
+
+:hasFirstMember rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasHomeWork
+
+:hasHomeWork rdf:type owl:ObjectProperty ;
+             
+             rdfs:domain :Course ;
+             
+             rdfs:range :Homework .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasLecture
+
+:hasLecture rdf:type owl:ObjectProperty ;
+            
+            rdfs:domain :Course ;
+            
+            rdfs:range :Lecture .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasMember
+
+:hasMember rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasMidtermExam
+
+:hasMidtermExam rdf:type owl:ObjectProperty ;
+                
+                rdfs:domain :Course ;
+                
+                rdfs:range :MidtermExam .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasParticipant
+
+:hasParticipant rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasPeriodicity
+
+:hasPeriodicity rdf:type owl:FunctionalProperty ,
+                         owl:ObjectProperty ;
+                
+                rdfs:range :Periodicity .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasPrerequisite
+
+:hasPrerequisite rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:range :Prerequisite .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasPresentation
+
+:hasPresentation rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain :Course ;
+                 
+                 rdfs:range :Presentation .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasProfessor
+
+:hasProfessor rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain :Course ;
+              
+              rdfs:range :Tutor .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasRule
+
+:hasRule rdf:type owl:FunctionalProperty ,
+                  owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasRuleType
+
+:hasRuleType rdf:type owl:FunctionalProperty ,
+                      owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasSchoolActivity
+
+:hasSchoolActivity rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:range :SchoolActivity .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasSchoolActivitySynopsis
+
+:hasSchoolActivitySynopsis rdf:type owl:ObjectProperty ;
+                           
+                           rdfs:range :SchoolActivitySynopsis .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasSecondMember
+
+:hasSecondMember rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#requiredBy
+
+:requiredBy rdf:type owl:FunctionalProperty ,
+                     owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#requiredCourse
+
+:requiredCourse rdf:type owl:FunctionalProperty ,
+                         owl:ObjectProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#requiresActivity
+
+:requiresActivity rdf:type owl:FunctionalProperty ,
+                           owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#activitiesNo
+
+:activitiesNo rdf:type owl:DatatypeProperty ;
+              
+              rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#dayEnum
+
+:dayEnum rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#dayNameEnum
+
+:dayNameEnum rdf:type owl:DatatypeProperty ;
+             
+             rdfs:range xsd:positiveInteger .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#excludedDate
+
+:excludedDate rdf:type owl:DatatypeProperty ;
+              
+              rdfs:range xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasComment
+
+:hasComment rdf:type owl:DatatypeProperty ;
+            
+            rdfs:range rdf:PlainLiteral .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasDescription
+
+:hasDescription rdf:type owl:DatatypeProperty ;
+                
+                rdfs:range rdf:PlainLiteral .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasDurationInMins
+
+:hasDurationInMins rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasEndingDate
+
+:hasEndingDate rdf:type owl:DatatypeProperty ;
+               
+               rdfs:range xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasExamsNo
+
+:hasExamsNo rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :Course ;
+            
+            rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasHomeworksNo
+
+:hasHomeworksNo rdf:type owl:DatatypeProperty ;
+                
+                rdfs:domain :Course ;
+                
+                rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasLabsNo
+
+:hasLabsNo rdf:type owl:DatatypeProperty ;
+           
+           rdfs:domain :Course ;
+           
+           rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasLecturesNo
+
+:hasLecturesNo rdf:type owl:DatatypeProperty ;
+               
+               rdfs:domain :Course ;
+               
+               rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasMidtermExamNo
+
+:hasMidtermExamNo rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:domain :Course ;
+                  
+                  rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasName
+
+:hasName rdf:type owl:DatatypeProperty ;
+         
+         rdfs:range rdf:PlainLiteral .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasStartingDate
+
+:hasStartingDate rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:range xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasTitle
+
+:hasTitle rdf:type owl:DatatypeProperty ;
+          
+          rdfs:range rdf:PlainLiteral .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hasWorkloadInMins
+
+:hasWorkloadInMins rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#hoursOfStudyPerWeek
+
+:hoursOfStudyPerWeek rdf:type owl:DatatypeProperty ;
+                     
+                     rdfs:domain :Course ;
+                     
+                     rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#includedDatetime
+
+:includedDatetime rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:range xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#occurrences
+
+:occurrences rdf:type owl:DatatypeProperty ;
+             
+             rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#occurrencesPercentage
+
+:occurrencesPercentage rdf:type owl:DatatypeProperty ;
+                       
+                       rdfs:range xsd:double ;
+                       
+                       rdfs:subPropertyOf owl:topDataProperty .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#occursInDate
+
+:occursInDate rdf:type owl:DatatypeProperty ;
+              
+              rdfs:comment "αναπαράσταση ημερομηνίας/ώρας με τη μορφή \"1956-06-25T04:00:00-05:00\". Μόνο η πληροφορία της ημερομηνίας θα ληφθεί υπόψιν."@el ,
+                           """a date/time string with the following format \"1956-06-25T04:00:00-05:00\". Only the date info will be taken into consideration.
+"""@en ;
+              
+              rdfs:range xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#occursInDatetime
+
+:occursInDatetime rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:comment "αναπαράσταση ημερομηνίας/ώρας με τη μορφή \"1956-06-25T04:00:00-05:00\""@el ,
+                               """a date/time string with the following format \"1956-06-25T04:00:00-05:00\"
+"""@en ;
+                  
+                  rdfs:range xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#occursInTime
+
+:occursInTime rdf:type owl:DatatypeProperty ;
+              
+              rdfs:comment "αναπαράσταση ημερομηνίας/ώρας με τη μορφή \"1956-06-25T04:00:00-05:00\". Μόνο η πληροφορία της ώρας θα ληφθεί υπόψιν."@el ,
+                           """a date/time string with the following format \"1956-06-25T04:00:00-05:00\". Only the time info will be taken into consideration.
+"""@en ;
+              
+              rdfs:range xsd:dateTime .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#semester
+
+:semester rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Course ;
+          
+          rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#totalHoursOfStudy
+
+:totalHoursOfStudy rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:domain :Course ;
+                   
+                   rdfs:range xsd:integer .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#weekInterval
+
+:weekInterval rdf:type owl:DatatypeProperty ;
+              
+              rdfs:range xsd:positiveInteger .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#ActivityPrerequisite
+
+:ActivityPrerequisite rdf:type owl:Class ;
+                      
+                      owl:equivalentClass [ rdf:type owl:Class ;
+                                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :hasRule ;
+                                                                   owl:someValuesFrom :EquationRule
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :requiredBy ;
+                                                                   owl:someValuesFrom :SchoolActivity
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :requiresActivity ;
+                                                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                        owl:unionOf ( :SchoolActivity
+                                                                                                      :SchoolActivityBundle
+                                                                                                      :SchoolActivityType
+                                                                                                    )
+                                                                                      ]
+                                                                 ]
+                                                               )
+                                          ] ;
+                      
+                      rdfs:subClassOf :Prerequisite .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#AtLeastRule
+
+:AtLeastRule rdf:type owl:Class ;
+             
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:intersectionOf ( :EquationRule
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :hasRuleType ;
+                                                          owl:hasValue :AtLeastRule
+                                                        ]
+                                                      )
+                                 ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#AtMostRule
+
+:AtMostRule rdf:type owl:Class ;
+            
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:intersectionOf ( :EquationRule
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasRuleType ;
+                                                         owl:hasValue :AtMostRule
+                                                       ]
+                                                     )
+                                ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#AttendancePrerequisite
+
+:AttendancePrerequisite rdf:type owl:Class ;
+                        
+                        owl:equivalentClass [ rdf:type owl:Class ;
+                                              owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :hasRule ;
+                                                                     owl:someValuesFrom :EquationRule
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :requiresActivity ;
+                                                                     owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                          owl:unionOf ( :SchoolActivity
+                                                                                                        :SchoolActivityBundle
+                                                                                                        :SchoolActivityType
+                                                                                                      )
+                                                                                        ]
+                                                                   ]
+                                                                 )
+                                            ] ;
+                        
+                        rdfs:subClassOf :Prerequisite .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#AttendanceType
+
+:AttendanceType rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:oneOf ( :MixedAttendance
+                                                  :OnSiteAttendance
+                                                  :RemoteAttendance
+                                                  :EitherAttendance
+                                                )
+                                    ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Bundle
+
+:Bundle rdf:type owl:Class ;
+        
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasMember ;
+                              owl:someValuesFrom owl:Thing
+                            ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#ClassLecture
+
+:ClassLecture rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Lecture .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#ClassLectureSynopsis
+
+:ClassLectureSynopsis rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :LectureSynopsis .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Course
+
+:Course rdf:type owl:Class ;
+        
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasSchoolActivitySynopsis ;
+                          owl:someValuesFrom :SchoolActivitySynopsis
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasSchoolActivity ;
+                          owl:someValuesFrom :SchoolActivity
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDescription ;
+                          owl:someValuesFrom rdf:PlainLiteral
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasProfessor ;
+                          owl:someValuesFrom :Tutor
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasEndingDate ;
+                          owl:someValuesFrom xsd:dateTime
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPrerequisite ;
+                          owl:someValuesFrom :Prerequisite
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasTitle ;
+                          owl:someValuesFrom rdf:PlainLiteral
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :semester ;
+                          owl:someValuesFrom xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasStartingDate ;
+                          owl:someValuesFrom xsd:dateTime
+                        ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#CoursePrerequisite
+
+:CoursePrerequisite rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty :requiredCourse ;
+                                          owl:someValuesFrom :Course
+                                        ] ;
+                    
+                    rdfs:subClassOf :Prerequisite .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#DayRecord
+
+:DayRecord rdf:type owl:Class ;
+           
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :occursInTime ;
+                             owl:someValuesFrom xsd:dateTime
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :weekInterval ;
+                             owl:someValuesFrom xsd:positiveInteger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :dayEnum ;
+                             owl:someValuesFrom xsd:positiveInteger
+                           ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#EquationRule
+
+:EquationRule rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                           owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :occurrences ;
+                                                                           owl:someValuesFrom xsd:integer
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :occurrencesPercentage ;
+                                                                           owl:someValuesFrom xsd:double
+                                                                         ]
+                                                                       )
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasRuleType ;
+                                                           owl:someValuesFrom :RuleType
+                                                         ]
+                                                       )
+                                  ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#ExactlyRule
+
+:ExactlyRule rdf:type owl:Class ;
+             
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:intersectionOf ( :EquationRule
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :hasRuleType ;
+                                                          owl:hasValue :ExactlyRule
+                                                        ]
+                                                      )
+                                 ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Exam
+
+:Exam rdf:type owl:Class ;
+      
+      rdfs:subClassOf :SchoolActivity .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#ExamSynopsis
+
+:ExamSynopsis rdf:type owl:Class ;
+              
+              rdfs:subClassOf :SchoolActivitySynopsis .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Example
+
+:Example rdf:type owl:Class .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#FinalExam
+
+:FinalExam rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Exam .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#FinalExamSynopsis
+
+:FinalExamSynopsis rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :ExamSynopsis .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Homework
+
+:Homework rdf:type owl:Class ;
+          
+          rdfs:subClassOf :SchoolActivity .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#HomeworkSynopsis
+
+:HomeworkSynopsis rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :SchoolActivitySynopsis .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#LabLecture
+
+:LabLecture rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Lecture .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#LabLectureSynopsis
+
+:LabLectureSynopsis rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :LectureSynopsis .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Lecture
+
+:Lecture rdf:type owl:Class ;
+         
+         rdfs:subClassOf :SchoolActivity ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :attendanceType ;
+                           owl:someValuesFrom :AttendanceType
+                         ] ;
+         
+         owl:disjointUnionOf ( :ClassLecture
+                               :LabLecture
+                             ) .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#LectureSynopsis
+
+:LectureSynopsis rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :SchoolActivitySynopsis .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#MidTermExamSynopsis
+
+:MidTermExamSynopsis rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :ExamSynopsis .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#MidtermExam
+
+:MidtermExam rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Exam .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#MonthPeriodicity
+
+:MonthPeriodicity rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Periodicity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :dayEnum ;
+                                    owl:someValuesFrom xsd:integer
+                                  ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#OneTimePeriodicity
+
+:OneTimePeriodicity rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty :occursInDatetime ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange xsd:dateTime
+                                        ] ;
+                    
+                    rdfs:subClassOf :Periodicity ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :occursInDatetime ;
+                                      owl:someValuesFrom xsd:dateTime
+                                    ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Periodicity
+
+:Periodicity rdf:type owl:Class .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Prerequisite
+
+:Prerequisite rdf:type owl:Class .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Presentation
+
+:Presentation rdf:type owl:Class ;
+              
+              rdfs:subClassOf :SchoolActivity .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#PresentationSynopsis
+
+:PresentationSynopsis rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :SchoolActivitySynopsis .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#RuleType
+
+:RuleType rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:oneOf ( :AtLeastRule
+                                            :ExactlyRule
+                                            :AtMostRule
+                                          )
+                              ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#SchoolActivity
+
+:SchoolActivity rdf:type owl:Class ;
+                
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasComment ;
+                                  owl:someValuesFrom rdf:PlainLiteral
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasDurationInMins ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:integer
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasDescription ;
+                                  owl:someValuesFrom rdf:PlainLiteral
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasTitle ;
+                                  owl:someValuesFrom rdf:PlainLiteral
+                                ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#SchoolActivityBundle
+
+:SchoolActivityBundle rdf:type owl:Class ;
+                      
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasMember ;
+                                            owl:someValuesFrom :SchoolActivity
+                                          ] ;
+                      
+                      rdfs:subClassOf :Bundle .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#SchoolActivitySynopsis
+
+:SchoolActivitySynopsis rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasWorkloadInMins ;
+                                          owl:someValuesFrom xsd:integer
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasPeriodicity ;
+                                          owl:someValuesFrom :Periodicity
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasDurationInMins ;
+                                          owl:someValuesFrom xsd:integer
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :activitiesNo ;
+                                          owl:someValuesFrom xsd:integer
+                                        ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#SchoolActivityType
+
+:SchoolActivityType rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Class ;
+                                          owl:oneOf ( :ClassLecture
+                                                      :Presentation
+                                                      :Lecture
+                                                      :MidtermExam
+                                                      :Homework
+                                                      :LabLecture
+                                                      :FinalExam
+                                                    )
+                                        ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#SomeTimesPeriodicity
+
+:SomeTimesPeriodicity rdf:type owl:Class ;
+                      
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty :occursInDatetime ;
+                                            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                            owl:onDataRange xsd:dateTime
+                                          ] ;
+                      
+                      rdfs:subClassOf :Periodicity .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Student
+
+:Student rdf:type owl:Class ;
+         
+         rdfs:subClassOf :User .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Tutor
+
+:Tutor rdf:type owl:Class ;
+       
+       rdfs:subClassOf :User .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#User
+
+:User rdf:type owl:Class ;
+      
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasName ;
+                        owl:someValuesFrom rdfs:Literal
+                      ] .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#WeekPeriodicity
+
+:WeekPeriodicity rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Periodicity ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasDayRecord ;
+                                   owl:someValuesFrom :DayRecord
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :excludedDate ;
+                                   owl:someValuesFrom xsd:dateTime
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :includedDatetime ;
+                                   owl:someValuesFrom xsd:dateTime
+                                 ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#AtLeastRule
+
+:AtLeastRule rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#AtMostRule
+
+:AtMostRule rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#ClassLecture
+
+:ClassLecture rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#EitherAttendance
+
+:EitherAttendance rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#ExactlyRule
+
+:ExactlyRule rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#FinalExam
+
+:FinalExam rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Homework
+
+:Homework rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#LabLecture
+
+:LabLecture rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Lecture
+
+:Lecture rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#MidtermExam
+
+:MidtermExam rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#MixedAttendance
+
+:MixedAttendance rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#OnSiteAttendance
+
+:OnSiteAttendance rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#Presentation
+
+:Presentation rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.uom.gr/ai/ontologies/Coursr#RemoteAttendance
+
+:RemoteAttendance rdf:type owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :ClassLecture
+                        :FinalExam
+                        :Homework
+                        :LabLecture
+                        :Lecture
+                        :MidtermExam
+                        :Presentation
+                      )
+] .
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :EitherAttendance
+                        :MixedAttendance
+                        :OnSiteAttendance
+                        :RemoteAttendance
+                      )
+] .
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :AtLeastRule
+                        :AtMostRule
+                        :ExactlyRule
+                      )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+
